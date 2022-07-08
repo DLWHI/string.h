@@ -20,7 +20,6 @@ s21_string.a:
 	mv $(SRC_PATH)/*.o $(OBJ_PATH)
 	cd $(OBJ_PATH) && ar rcs ../$(LIBNAME) $(TARGET_FILES:.c=.o)
 	ranlib s21_string.a
-	rm -rf *.o
 
 gcov_report: test
 	./$(EXE)
