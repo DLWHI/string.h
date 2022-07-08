@@ -28,12 +28,6 @@ gcov_report: test
 	genhtml -o report report.info;
 	rm -rf *.info *.gcda *.gcno
 
-check: test
-	cp ../materials/linters/cpplint.py ./cpplint.py
-	cp ../materials/linters/CPPLINT.CFG ./CPPLINT.CFG
-	python3 cpplint.py *.c
-	python3 cpplint.py *.h
-	leaks -atExit -- ./test.out 
 clean:
 	rm -rf *.info *.gcda *.gcno report *.out *.a *.gcov
 	rm -rf report a.out.dsym CPPLINT.CFG cpplint.py *.dSYM
